@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://asasko.online/sitemap.xml
+Sitemap: https://www.asasko.online/sitemap.xml
