@@ -1,0 +1,150 @@
+/* ==========================================================================
+   ASASKO MAX | Header Navigation Component (LOCKED)
+   Height: 84px | Background: #F5F2EC | Minimal Subtle Border
+   Right: Horizontal Logo | Center: Navigation Links | Left: Orange CTA
+   ========================================================================== */
+
+.site-header {
+  height: var(--header-height);
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
+
+.site-header .container {
+  height: 100%;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--space-xl);
+}
+
+/* --- Brand Logo (Right side in RTL) --- */
+.header-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.header-logo-img {
+  height: 47px;
+  width: auto;
+  max-width: 215px;
+  object-fit: contain;
+  transition: opacity var(--transition-fast);
+}
+
+.header-brand:hover .header-logo-img {
+  opacity: 0.92;
+}
+
+/* --- Navigation Links (Center) --- */
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 48px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-family: var(--font-family-body);
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  padding: 10px 4px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-brand-blue);
+}
+
+/* Active Nav State */
+.nav-item.is-active .nav-link {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+.nav-item.is-active .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--color-navy);
+  border-radius: 1px;
+}
+
+/* --- Header Action Button (Left side in RTL) --- */
+.header-action {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* CTA: Reduced by ~10%, Orange #FF7200, White text, 6px radius */
+.btn-header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  font-family: var(--font-family-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 19px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  letter-spacing: -0.01em;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-header-cta:hover {
+  background-color: var(--color-orange-hover);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 114, 0, 0.22);
+}
+
+.btn-header-cta:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .nav-list {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 860px) {
+  .header-nav {
+    display: none;
+  }
+}

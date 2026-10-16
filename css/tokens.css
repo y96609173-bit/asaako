@@ -1,0 +1,161 @@
+/* ==========================================================================
+   ASASKO MAX | Global Design System Tokens
+   Brand: أساسكو ماكس
+   Modern 2026 Architectural Finishing System
+   ========================================================================== */
+
+/* --- Self-Hosted Local Font Definitions --- */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../assets/fonts/alexandria-arabic.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+FB50-FDFF, U+FE70-FEFC;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/ibmplex-arabic-regular.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+FB50-FDFF, U+FE70-FEFC;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/ibmplex-arabic-semi.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+FB50-FDFF, U+FE70-FEFC;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/ibmplex-arabic-semi.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+FB50-FDFF, U+FE70-FEFC;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/ibmplex-arabic-bold.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+FB50-FDFF, U+FE70-FEFC;
+}
+
+:root {
+  /* --- Color Palette --- */
+  --bg-primary: #F5F2EC;          /* Architectural warm off-white canvas */
+  --bg-surface: #FFFFFF;          /* Pure surface for contrast cards/overlays */
+  --bg-subtle: #EFECE5;           /* Secondary soft warm tint */
+  
+  --color-navy: #071A32;          /* Primary dark navy - authoritative, architectural */
+  --color-brand-blue: #0B4A9E;    /* Signature brand blue */
+  --color-orange: #FF7200;        /* Signature brand orange */
+  --color-orange-hover: #E66600;  /* Deeper orange for hover transitions */
+  
+  --color-text: #101828;          /* High-contrast charcoal text */
+  --color-muted: #535862;         /* Refined slate gray for secondary copy */
+  --color-muted-light: #98A2B3;   /* Light gray for hairline details/slashes */
+  
+  --border-subtle: rgba(7, 26, 50, 0.08);
+  --border-medium: rgba(7, 26, 50, 0.12);
+  --border-strong: rgba(7, 26, 50, 0.22);
+
+  /* --- Typography --- */
+  --font-family-display: 'Alexandria', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-body: 'IBM Plex Sans Arabic', 'Alexandria', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Font Sizes */
+  --font-size-hero: 60px;
+  --font-size-body: 18px;
+  --font-size-body-sm: 15px;
+  --font-size-label: 14px;
+
+  /* --- Spacing System --- */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+
+  /* --- Layout --- */
+  --header-height: 84px;
+  --container-max-width: 1320px;
+  --container-gutter: 32px;
+
+  /* --- Transitions & Shadows --- */
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-subtle: 0 4px 18px -2px rgba(7, 26, 50, 0.04);
+  --shadow-editorial: 0 20px 48px -12px rgba(7, 26, 50, 0.09);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+}
+
+/* Base Document Reset & Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: var(--bg-primary);
+  color: var(--color-text);
+  font-family: var(--font-family-body);
+  direction: rtl;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--color-text);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+img, picture, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Container Utility */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--container-gutter);
+  padding-left: var(--container-gutter);
+}

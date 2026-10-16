@@ -1,0 +1,114 @@
+[
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.08 AM (1).jpeg",
+    "name": "paint-salon-luxury.jpg",
+    "cat": "paint",
+    "title": "صالون فيلا سكنية فاخرة",
+    "loc": "الرياض، حي حطين"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.08 AM (2).jpeg",
+    "name": "paint-outdoor-terrace.jpg",
+    "cat": "paint",
+    "title": "جلسة وتراس خارجي بتشطيب ناعم",
+    "loc": "الرياض، حي النخيل"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.09 AM.jpeg",
+    "name": "paint-master-bedroom.jpg",
+    "cat": "paint",
+    "title": "جناح نوم رئيسي بدهانات ديكورية",
+    "loc": "الرياض، حي الياسمين"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.09 AM (1).jpeg",
+    "name": "paint-living-hall.jpg",
+    "cat": "paint",
+    "title": "صالة معيشة عصرية وأسقف معلقة",
+    "loc": "الدرعية"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.16 AM (1).jpeg",
+    "name": "epoxy-mega-hangar.jpg",
+    "cat": "epoxy",
+    "title": "أرضيات إيبوكسي صناعي لمستودع تخزين ضخم",
+    "loc": "المدينة الصناعية الثانية، الرياض"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.05 AM (1).jpeg",
+    "name": "epoxy-logistics-arrows.jpg",
+    "cat": "epoxy",
+    "title": "مستودع لوجستي بمسارات مرورية محددة",
+    "loc": "طريق الخرج، الرياض"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.15 AM (2).jpeg",
+    "name": "epoxy-parking-basement.jpg",
+    "cat": "epoxy",
+    "title": "مواقف سيارات سفلية لمبنى تجاري",
+    "loc": "طريق الملك فهد، الرياض"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.18 AM (1).jpeg",
+    "name": "epoxy-commercial-showroom.jpg",
+    "cat": "epoxy",
+    "title": "صالة عرض كبرى بإيبوكسي عالي اللمعان",
+    "loc": "جدة، طريق المدينة"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.14 AM (2).jpeg",
+    "name": "epoxy-factory-walkway.jpg",
+    "cat": "epoxy",
+    "title": "مسارات أمان وإيبوكسي لمصنع أغذية",
+    "loc": "الدمام"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.06 AM.jpeg",
+    "name": "epoxy-industrial-hall.jpg",
+    "cat": "epoxy",
+    "title": "أرضيات مصنع بمقاومة عالية للأحمال الثقيلة",
+    "loc": "الرياض"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.11 AM (2).jpeg",
+    "name": "facade-palace-night.jpg",
+    "cat": "facade",
+    "title": "قصر سكني فاخر — واجهات وبروفايل نهاري وليلي",
+    "loc": "الرياض، حي الرفيعة"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.08 AM.jpeg",
+    "name": "facade-villas-compound.jpg",
+    "cat": "facade",
+    "title": "مجمع فلل سكنية بتشطيب بروفايل أبيض مودرن",
+    "loc": "الرياض، حي الملقا"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.12 AM.jpeg",
+    "name": "facade-commercial-building.jpg",
+    "cat": "facade",
+    "title": "مشروع مبنى سكني وتجاري «سكينة 9»",
+    "loc": "الرياض"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.11 AM (1).jpeg",
+    "name": "facade-residential-complex.jpg",
+    "cat": "facade",
+    "title": "عمارة سكنية بتشطيب بروفايل ومشربيات معمارية",
+    "loc": "الرياض، حي النرجس"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.13 AM.jpeg",
+    "name": "facade-classic-villa.jpg",
+    "cat": "facade",
+    "title": "فيلا نيوكلاسيك بأقواس وكرانيش بروفايل",
+    "loc": "الرياض، حي الصحافة"
+  },
+  {
+    "src": "WhatsApp Image 2026-10-12 at 5.15.11 AM.jpeg",
+    "name": "facade-sunset-villas.jpg",
+    "cat": "facade",
+    "title": "مجمع فلل عصرية بتشطيب بروفايل عازل",
+    "loc": "الدرعية الجديدة"
+  }
+]

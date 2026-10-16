@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أساسكو ماكس | حلول احترافية للدهانات والإيبوكسي والتشطيبات</title>
+<link rel="stylesheet" href="google-fonts.css">
+<style>
+/* =============================================
+   FONTS
+   ============================================= */
+@font-face {
+  font-family: 'Alexandria';
+  src: url('assets/fonts/alexandria-arabic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  src: url('assets/fonts/ibmplex-arabic-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  src: url('assets/fonts/ibmplex-arabic-semi.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  src: url('assets/fonts/ibmplex-arabic-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* =============================================
+   VARIABLES & DESIGN TOKENS
+   ============================================= */
+:root {
+  --navy: #0A2540;
+  --navy-dark: #071A32;
+  --navy-deep: #040F1D;
+  --blue: #0B4A9E;
+  --blue-light: #EBF3FF;
+  --orange: #FF6600;
+  --orange-hover: #E65A00;
+  --orange-light: #FFF4EB;
+  --text-dark: #101828;
+  --text-muted: #475467;
+  --text-light: #98A2B3;
+  --bg-white: #FFFFFF;
+  --bg-light: #F9FAFB;
+  --bg-warm: #F4EFE6;
+  --border-color: #E4E7EC;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 2px 8px rgba(10, 37, 64, 0.05);
+  --shadow-md: 0 10px 30px rgba(10, 37, 64, 0.08);
+  --shadow-lg: 0 20px 40px rgba(10, 37, 64, 0.12);
+  --shadow-orange: 0 10px 25px rgba(255, 102, 0, 0.35);
+  --max-w: 1280px;
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =============================================
+   RESET & BASE STYLES
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  font-family: 'IBM Plex Sans Arabic', 'Alexandria', sans-serif;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  direction: rtl;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: var(--transition);
+}
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =============================================
+   FLOATING NAVBAR
+   ============================================= */
+.header-wrapper {
+  position: fixed;
+  top: 16px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 20px;
+  pointer-events: none;
+}
+.navbar {
+  pointer-events: auto;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(228, 231, 236, 0.8);
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 30px rgba(10, 37, 64, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  transition: var(--transition);
+}
+.navbar.scrolled {
+  box-shadow: 0 12px 35px rgba(10, 37, 64, 0.12);
+  background: rgba(255, 255, 255, 0.98);
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+.nav-brand img {
+  height: 42px;
+  width: auto;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  position: relative;
+  padding: 6px 0;
+}
+.nav-link.active,
+.nav-link:hover {
+  color: var(--orange);
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--orange);
+  border-radius: 2px;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn-nav-primary {
+  background: linear-gradient(135deg, #FF7700 0%, #FF5500 100%);
+  color: #FFFFFF;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+}
+.btn-nav-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.45);
+}
+.btn-nav-ghost {
+  background: #FFFFFF;
+  color: var(--navy);
+  border: 1.5px solid var(--border-color);
+  padding: 9px 20px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-nav-ghost:hover {
+  border-color: var(--navy);
+  background: var(--bg-light);
+}
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background-color: var(--navy);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 86px;
+  left: 20px;
+  right: 20px;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 999;
+}
+.mobile-drawer.active {
+  display: flex;
+}
+.mobile-drawer a {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  padding: 10px 0;
+  border-bottom: 1px solid #F2F4F7;
+}
+
+/* =============================================
+   HERO SECTION
+   ============================================= */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 110px;
+  padding-bottom: 50px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFD 50%, #F1F5FA 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.hero-skyline {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 160px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' fill='%23DDE6F2' opacity='0.45'%3E%3Cpath d='M0 200V180H40V120H55V90H70V120H85V180H120V150H150V200H200V130H220V100H240V70H250V40H260V70H280V100H300V200H350V160H390V110H410V200H450V140H480V170H510V90H525V50H540V90H560V200H620V150H660V120H690V200H740V80H755V20H770V80H790V200H840V130H880V160H920V110H950V200H1000V200Z'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: bottom right;
+  background-size: 800px auto;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  background: rgba(10, 37, 64, 0.04);
+  border: 1px solid rgba(10, 37, 64, 0.1);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+.hero-eyebrow-dash {
+  color: var(--orange);
+  font-weight: 800;
+}
+.hero-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+}
+.hero-title .title-navy {
+  color: var(--navy);
+  display: block;
+}
+.hero-title .title-orange {
+  color: var(--orange);
+  display: block;
+  background: linear-gradient(135deg, #FF6600 0%, #FF8800 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-desc {
+  font-size: 18px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 540px;
+}
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.btn-hero-primary {
+  background: linear-gradient(135deg, #FF7700 0%, #FF5500 100%);
+  color: #FFFFFF;
+  padding: 15px 34px;
+  border-radius: var(--radius-full);
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-orange);
+}
+.btn-hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 102, 0, 0.45);
+}
+.btn-hero-primary .icon-circle {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-hero-secondary {
+  background: #FFFFFF;
+  color: var(--navy);
+  border: 1.5px solid var(--border-color);
+  padding: 14px 30px;
+  border-radius: var(--radius-full);
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-sm);
+}
+.btn-hero-secondary:hover {
+  border-color: var(--navy);
+  background: var(--bg-light);
+  transform: translateY(-2px);
+}
+.btn-hero-secondary .play-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+}
+
+/* Hero Feature Cards */
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+.feature-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
+  box-shadow: 0 8px 24px rgba(10, 37, 64, 0.06);
+  border: 1px solid rgba(228, 231, 236, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--transition);
+}
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(10, 37, 64, 0.1);
+  border-color: rgba(255, 102, 0, 0.3);
+}
+.feature-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.feature-icon-wrap.orange {
+  background: #FFF4EB;
+  color: #FF6600;
+}
+.feature-icon-wrap.blue {
+  background: #EBF3FF;
+  color: #0B4A9E;
+}
+.feature-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.feature-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Hero Visual Art */
+.hero-visual-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-art-img {
+  width: 100%;
+  max-width: 580px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px rgba(10, 37, 64, 0.16);
+  transition: transform 0.6s ease;
+}
+.hero-art-img:hover {
+  transform: scale(1.02);
+}
+.hero-badge-float {
+  position: absolute;
+  bottom: 24px;
+  right: -10px;
+  background: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.badge-stat {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.1;
+}
+.badge-stat span {
+  color: var(--orange);
+}
+.badge-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* =============================================
+   SERVICES SECTION (With Real Work Imagery)
+   ============================================= */
+.section {
+  padding: 100px 0;
+}
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 60px;
+}
+.section-badge {
+  display: inline-block;
+  background: var(--orange-light);
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+.section-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.section-subtitle {
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.service-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 102, 0, 0.4);
+}
+.service-media {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+}
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.service-card:hover .service-img {
+  transform: scale(1.08);
+}
+.service-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(10, 37, 64, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+.service-real-badge {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(255, 102, 0, 0.9);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.service-num {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  background: var(--orange);
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: var(--shadow-orange);
+  border: 2px solid #FFFFFF;
+}
+.service-content {
+  padding: 30px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.service-card-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.service-card-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.service-features-list {
+  list-style: none;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.service-features-list li {
+  font-size: 13.5px;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.service-features-list svg {
+  color: var(--orange);
+  flex-shrink: 0;
+}
+.service-action-link {
+  margin-top: auto;
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.service-action-link:hover {
+  gap: 12px;
+  color: var(--orange-hover);
+}
+
+/* =============================================
+   WHY CHOOSE US SECTION (Dark Navy Theme)
+   ============================================= */
+.why-us-section {
+  background: linear-gradient(135deg, #071A32 0%, #040F1D 100%);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  padding: 110px 0;
+}
+.why-us-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(11, 74, 158, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+.why-us-section::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.why-us-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.why-us-content .section-badge {
+  background: rgba(255, 102, 0, 0.15);
+  color: #FF8833;
+}
+.why-us-content .section-title {
+  color: #FFFFFF;
+}
+.why-us-content .section-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+}
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.stat-box {
+  display: flex;
+  flex-direction: column;
+}
+.stat-num {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+}
+.stat-num span {
+  color: var(--orange);
+}
+.stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 6px;
+}
+
+.why-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.why-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  transition: var(--transition);
+}
+.why-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 102, 0, 0.4);
+  transform: translateX(-6px);
+}
+.why-card-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 102, 0, 0.15);
+  color: var(--orange);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.why-card-info h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+.why-card-info p {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+}
+
+/* =============================================
+   PROJECTS SECTION (Real Company Works Showcase)
+   ============================================= */
+.projects-section {
+  background-color: var(--bg-light);
+  padding: 100px 0;
+}
+.projects-header-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.projects-header-wrap .section-header {
+  text-align: right;
+  margin: 0;
+}
+
+/* Category Filter Tabs */
+.filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-color);
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.filter-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.filter-btn.active {
+  background: var(--navy);
+  color: #FFFFFF;
+  border-color: var(--navy);
+  box-shadow: 0 4px 15px rgba(10, 37, 64, 0.2);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.project-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 102, 0, 0.4);
+}
+.project-card.hidden {
+  display: none !important;
+}
+.project-media {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: #111;
+}
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-card:hover .project-media img {
+  transform: scale(1.08);
+}
+.project-category-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(10, 37, 64, 0.88);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  z-index: 2;
+}
+.project-verified-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(255, 102, 0, 0.95);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+}
+.project-info {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.project-name {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.project-loc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+.project-loc svg {
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+/* =============================================
+   WORK PROCESS SECTION
+   ============================================= */
+.process-section {
+  padding: 100px 0;
+  background-color: #FFFFFF;
+}
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  position: relative;
+  margin-top: 40px;
+}
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 35px;
+  right: 10%;
+  left: 10%;
+  height: 2px;
+  background: linear-gradient(to left, #FF6600 0%, rgba(255, 102, 0, 0.2) 100%);
+  z-index: 0;
+}
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+  z-index: 1;
+}
+.step-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid #E4E7EC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(10, 37, 64, 0.05);
+  transition: var(--transition);
+}
+.process-step:hover .step-circle {
+  background: var(--orange);
+  color: #FFFFFF;
+  border-color: var(--orange);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-orange);
+}
+.step-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.step-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* =============================================
+   FINAL CTA SECTION
+   ============================================= */
+.final-cta-section {
+  background: linear-gradient(135deg, #0A2540 0%, #071A32 50%, #040F1D 100%);
+  position: relative;
+  padding: 100px 0;
+  color: #FFFFFF;
+  text-align: center;
+  overflow: hidden;
+}
+.final-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 102, 0, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cta-box {
+  max-width: 740px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.cta-box .section-badge {
+  background: rgba(255, 102, 0, 0.18);
+  color: #FF8833;
+}
+.cta-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(34px, 4.2vw, 52px);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+.cta-title span {
+  color: var(--orange);
+}
+.cta-desc {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+.cta-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.btn-cta-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  padding: 15px 32px;
+  border-radius: var(--radius-full);
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+}
+.btn-cta-whatsapp:hover {
+  background: #20BD5A;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+}
+
+/* =============================================
+   LIGHTBOX MODAL
+   ============================================= */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 15, 29, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.lightbox-modal.active {
+  display: flex;
+}
+.lightbox-container {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  max-width: 900px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  animation: modalIn 0.3s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 38px;
+  height: 38px;
+  background: rgba(10, 37, 64, 0.85);
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+}
+.lightbox-close:hover {
+  background: var(--orange);
+}
+.lightbox-img-wrap {
+  width: 100%;
+  height: 520px;
+  background: #071A32;
+}
+.lightbox-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.lightbox-body {
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #FFFFFF;
+}
+.lightbox-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.lightbox-loc {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.site-footer {
+  background-color: var(--navy-deep);
+  color: #FFFFFF;
+  padding: 80px 0 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.3fr;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+.footer-brand img {
+  height: 44px;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+.footer-desc {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+  max-width: 320px;
+  margin-bottom: 24px;
+}
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+}
+.social-btn:hover {
+  background: var(--orange);
+  color: #FFFFFF;
+  border-color: var(--orange);
+  transform: translateY(-2px);
+}
+.footer-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.footer-links a {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer-links a:hover {
+  color: var(--orange);
+  padding-right: 6px;
+}
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14.5px;
+}
+.footer-contact-item svg {
+  color: var(--orange);
+  flex-shrink: 0;
+}
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.4);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* =============================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================= */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .hero-visual-wrap {
+    order: -1;
+  }
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .process-timeline {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .process-timeline::before {
+    display: none;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .nav-menu, .nav-actions {
+    display: none;
+  }
+  .nav-hamburger {
+    display: flex;
+  }
+  .hero-features {
+    grid-template-columns: 1fr;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .process-timeline {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .lightbox-img-wrap {
+    height: 340px;
+  }
+  .lightbox-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  background: #25D366;
+  color: #FFFFFF;
+  border-radius: var(--radius-full);
+  padding: 12px 20px 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  z-index: 999;
+  font-size: 14px;
+  font-weight: 700;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.floating-whatsapp:hover {
+  background: #20BD5A;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+  color: #FFFFFF;
+}
+@media (max-width: 600px) {
+  .floating-whatsapp {
+    bottom: 20px;
+    left: 20px;
+    padding: 12px;
+  }
+  .floating-whatsapp span {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== FLOATING NAVBAR ===================== -->
+<div class="header-wrapper">
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-brand">
+      <img src="assets/images/logo-horizontal-trimmed.png" alt="أساسكو ماكس">
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#" class="nav-link active">الرئيسية</a></li>
+      <li><a href="#services" class="nav-link">خدماتنا</a></li>
+      <li><a href="#projects" class="nav-link">مشاريعنا المنفذة</a></li>
+      <li><a href="#why-us" class="nav-link">من نحن</a></li>
+      <li><a href="#process" class="nav-link">خطوات العمل</a></li>
+      <li><a href="#final-cta" class="nav-link">تواصل معنا</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#projects" class="btn-nav-ghost">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        أعمالنا
+      </a>
+      <a href="#final-cta" class="btn-nav-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        اطلب عرض سعر
+      </a>
+    </div>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</div>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="#">الرئيسية</a>
+  <a href="#services">خدماتنا</a>
+  <a href="#projects">مشاريعنا المنفذة</a>
+  <a href="#why-us">من نحن</a>
+  <a href="#process">خطوات العمل</a>
+  <a href="#final-cta">تواصل معنا</a>
+  <a href="#final-cta" class="btn-nav-primary" style="justify-content:center;margin-top:10px;">اطلب عرض سعر</a>
+</div>
+
+<!-- ===================== HERO SECTION ===================== -->
+<section class="hero-section" id="hero">
+  <div class="hero-skyline"></div>
+  <div class="container hero-container">
+    
+    <!-- Hero Content (Right in RTL) -->
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dash">—</span>
+        <span>أساسكو ماكس — ريادة التشطيب العصري</span>
+        <span class="hero-eyebrow-dash">—</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="title-navy">حلول احترافية للدهانات</span>
+        <span class="title-orange">والإيبوكسي والتشطيبات</span>
+      </h1>
+      <p class="hero-desc">
+        نقدم خدمات الدهانات الداخلية والخارجية وأعمال الإيبوكسي وتشطيبات الواجهات بأعلى معايير الجودة والإتقان، من المعالجة الدقيقة للسطح وحتى اللمسة الأخيرة.
+      </p>
+      
+      <div class="hero-cta-group">
+        <a href="#final-cta" class="btn-hero-primary">
+          <span class="icon-circle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+          اطلب عرض سعر
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        </a>
+        <a href="#projects" class="btn-hero-secondary">
+          <span class="play-circle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </span>
+          شاهد أعمالنا
+        </a>
+      </div>
+
+      <!-- 3 Floating Feature Badges -->
+      <div class="hero-features">
+        <div class="feature-card">
+          <div class="feature-icon-wrap orange">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4 class="feature-title">جودة عالية</h4>
+          <p class="feature-sub">نتائج تدوم لسنوات طويلة</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h4 class="feature-title">تنفيذ احترافي</h4>
+          <p class="feature-sub">بفريق متخصص وخبرة عالية</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap orange">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h4 class="feature-title">خامات ممتازة</h4>
+          <p class="feature-sub">أفضل المواد المعتمدة عالمياً</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hero Visual (Left in RTL) -->
+    <div class="hero-visual-wrap">
+      <img src="assets/images/hero-art-clean.jpg" alt="تشطيبات معمارية فاخرة أساسكو ماكس" class="hero-art-img">
+      <div class="hero-badge-float">
+        <div class="feature-icon-wrap orange" style="margin-bottom:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div>
+          <div class="badge-stat"><span>+10</span> سنوات</div>
+          <div class="badge-label">ريادة في السوق السعودي</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SERVICES SECTION ===================== -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">— خدماتنا المتخصصة —</span>
+      <h2 class="section-title">ثلاثة مجالات رئيسية.<br>تنفيذ بمعيار هندسي موحد.</h2>
+      <p class="section-subtitle">من الفحص الدقيق ومعالجة الأسطح وحتى التسليم النهائي، نُطبق أعلى معايير الجودة العالمية في كل خدمة نقدمها.</p>
+    </div>
+
+    <div class="services-grid">
+      
+      <!-- Service 1: Painting -->
+      <div class="service-card">
+        <div class="service-media">
+          <img src="assets/images/real/paint-salon-luxury.jpg" alt="الدهانات الداخلية والخارجية" class="service-img" loading="lazy">
+          <span class="service-tag">الأكثر طلباً</span>
+          <span class="service-real-badge">✓ من تنفيذنا الفعلي</span>
+          <div class="service-num">01</div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-card-title">الدهانات الداخلية والخارجية</h3>
+          <p class="service-card-desc">تأسيس احترافي يبدأ بمعالجة الرطوبة والتشققات وصنفرة الأسطح، مروراً بأفضل طبقات البرايمر، وصولاً إلى أحدث الدهانات الديكورية العصرية بمقاومة فائقة.</p>
+          <ul class="service-features-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              معالجة شقوق وتأسيس معجون متعدد الطبقات
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              دهانات جوتن والجزيرة المعتمدة بضمان
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              تشطيبات ديكورية (مخملي، رخامي، خرساني)
+            </li>
+          </ul>
+          <a href="#final-cta" class="service-action-link">
+            طلب معاينة للدهانات
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 2: Epoxy -->
+      <div class="service-card">
+        <div class="service-media">
+          <img src="assets/images/real/epoxy-mega-hangar.jpg" alt="أرضيات الإيبوكسي" class="service-img" loading="lazy">
+          <span class="service-tag">متانة صناعية وتجارية</span>
+          <span class="service-real-badge">✓ من تنفيذنا الفعلي</span>
+          <div class="service-num">02</div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-card-title">أرضيات الإيبوكسي المتطورة</h3>
+          <p class="service-card-desc">حلول أرضيات متكاملة للمستودعات الضخمة، والمصانع، والمواقف، والصالات التجارية والفلل، بتشطيب لامع يقاوم أثقل الحمولات والمواد الكيميائية.</p>
+          <ul class="service-features-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              إيبوكسي ذاتي التسوية (Self-Leveling) وميتاليك
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              أرضيات مقاومة للبكتيريا والزيوت والكيماويات
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              تخطيط مسارات السلامة وخطوط التوجيه
+            </li>
+          </ul>
+          <a href="#final-cta" class="service-action-link">
+            طلب معاينة للإيبوكسي
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 3: Facades -->
+      <div class="service-card">
+        <div class="service-media">
+          <img src="assets/images/real/facade-palace-night.jpg" alt="الواجهات والبروفايل" class="service-img" loading="lazy">
+          <span class="service-tag">مقاومة للعوامل الجوية</span>
+          <span class="service-real-badge">✓ من تنفيذنا الفعلي</span>
+          <div class="service-num">03</div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-card-title">الواجهات وتشطيبات البروفايل</h3>
+          <p class="service-card-desc">تنفيذ بروفايل الواجهات الخارجية وخامات الحماية من أشعة الشمس الحارقة والأمطار، بتصاميم معمارية راقية تُبرز جمال المبنى وتحافظ على قيمته لعشرات السنين.</p>
+          <ul class="service-features-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              بروفايل ناعم وخشن بمقاومة للأشعة فوق البنفسجية
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              عزل حراري ومائي متزامن مع التشطيب
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              تصاميم مودرن وكلاسيك متوافقة مع الكود السعودي
+            </li>
+          </ul>
+          <a href="#final-cta" class="service-action-link">
+            طلب معاينة للواجهات
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section class="why-us-section" id="why-us">
+  <div class="container">
+    <div class="why-us-grid">
+      
+      <div class="why-us-content">
+        <span class="section-badge">— لماذا أساسكو ماكس —</span>
+        <h2 class="section-title">خبرة تُرى في كل متر،<br>وضمان يمنحك راحة البال.</h2>
+        <p class="section-subtitle">لا نعمل بنظام المقاولة العشوائية؛ نتبع خطوات هندسية مدروسة مع إشراف مباشر من مهندسين وفنيين محترفين، لضمان أعلى مستويات الدقة والمتانة.</p>
+        
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="stat-num">+<span class="count">250</span></div>
+            <div class="stat-label">مشروع منجز بنجاح</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">+<span class="count">10</span></div>
+            <div class="stat-label">سنوات خبرة في المملكة</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num"><span class="count">99</span>%</div>
+            <div class="stat-label">نسبة رضا العملاء</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-cards-list">
+        
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="why-card-info">
+            <h4>ضمان جودة خطي وموثق</h4>
+            <p>نقدم شهادة ضمان رسمية على كافة أعمال الدهانات والأرضيات والواجهات تضمن جودة الخامات والتنفيذ.</p>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="why-card-info">
+            <h4>التزام صارم بالمواعيد</h4>
+            <p>نحدد جدولاً زمنياً دقيقاً لكل مرحلة، ونلتزم بالتسليم في الموعد المتفق عليه دون تأخير.</p>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div class="why-card-info">
+            <h4>مواد أصلية معتمدة 100%</h4>
+            <p>توريد مباشر من كبرى الشركات العالمية مثل جوتن وسيكا والجزيرة، مع تقديم شهادات المنشأ والمطابقة.</p>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div class="why-card-info">
+            <h4>فريق فني متخصص ومدرب</h4>
+            <p>كوادر فنية متفرغة ومدربة على أحدث تقنيات الدهان ورش الإيبوكسي وتطبيق البروفايل المعماري.</p>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="why-card-info">
+            <h4>تسعير عادل وشفافية كاملة</h4>
+            <p>عرض سعر تفصيلي يوضح كل مادة وكل مرحلة عمل، دون أي رسوم غير معلنة أو مفاجآت لاحقة.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS / PORTFOLIO (12 Real Projects) ===================== -->
+<section class="projects-section" id="projects">
+  <div class="container">
+    <div class="projects-header-wrap">
+      <div class="section-header">
+        <span class="section-badge">— معرض أعمالنا المنجزة على أرض الواقع —</span>
+        <h2 class="section-title">مشاريع حقيقية تتحدث عن جودتنا</h2>
+        <p class="section-subtitle">شاهد نماذج حية وموثقة من مشاريعنا التي تم تنفيذها وتسليمها لعملائنا في مختلف مدن المملكة العربية السعودية.</p>
+      </div>
+      <a href="#final-cta" class="btn-hero-secondary">
+        اطلب عرض سعر لمشروعك
+      </a>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">جميع المشاريع (12)</button>
+      <button class="filter-btn" data-filter="paint">دهانات داخلية وخارجية</button>
+      <button class="filter-btn" data-filter="epoxy">أرضيات إيبوكسي</button>
+      <button class="filter-btn" data-filter="facade">واجهات وبروفايل</button>
+    </div>
+
+    <!-- Projects Grid (12 High Impact Real Projects) -->
+    <div class="projects-grid" id="projects-grid">
+      
+      <!-- Project 1: Epoxy Mega Hangar -->
+      <div class="project-card" data-cat="epoxy" data-img="assets/images/real/epoxy-mega-hangar.jpg" data-title="أرضيات إيبوكسي صناعي لمستودع لوجستي ضخم" data-loc="المدينة الصناعية الثانية، الرياض">
+        <div class="project-media">
+          <img src="assets/images/real/epoxy-mega-hangar.jpg" alt="إيبوكسي مستودع ضخم" loading="lazy">
+          <span class="project-category-badge">أرضيات إيبوكسي</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">أرضيات إيبوكسي صناعي لمستودع لوجستي ضخم</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            المدينة الصناعية الثانية، الرياض
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 2: Facade Palace -->
+      <div class="project-card" data-cat="facade" data-img="assets/images/real/facade-palace-night.jpg" data-title="قصر سكني فاخر — تشطيب واجهات وبروفايل وإضاءات" data-loc="الرياض، حي الرفيعة">
+        <div class="project-media">
+          <img src="assets/images/real/facade-palace-night.jpg" alt="قصر سكني فاخر" loading="lazy">
+          <span class="project-category-badge">واجهات وبروفايل</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">قصر سكني فاخر — تشطيب واجهات وبروفايل وإضاءات</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            الرياض، حي الرفيعة
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 3: Paint Luxury Salon -->
+      <div class="project-card" data-cat="paint" data-img="assets/images/real/paint-salon-luxury.jpg" data-title="صالون فيلا سكنية فاخرة — دهانات ناعمة معمارية" data-loc="الرياض، حي حطين">
+        <div class="project-media">
+          <img src="assets/images/real/paint-salon-luxury.jpg" alt="صالون فيلا فاخرة" loading="lazy">
+          <span class="project-category-badge">دهانات داخلية</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">صالون فيلا سكنية فاخرة — دهانات ناعمة معمارية</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            الرياض، حي حطين
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 4: Epoxy Arrows Warehouse -->
+      <div class="project-card" data-cat="epoxy" data-img="assets/images/real/epoxy-logistics-arrows.jpg" data-title="مستودع مركزي — إيبوكسي وتخطيط مسارات السلامة" data-loc="الرياض، طريق الخرج">
+        <div class="project-media">
+          <img src="assets/images/real/epoxy-logistics-arrows.jpg" alt="مستودع مركزي إيبوكسي" loading="lazy">
+          <span class="project-category-badge">أرضيات إيبوكسي</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">مستودع مركزي — إيبوكسي وتخطيط مسارات السلامة</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            الرياض، طريق الخرج
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 5: Facade Villas Compound -->
+      <div class="project-card" data-cat="facade" data-img="assets/images/real/facade-villas-compound.jpg" data-title="مجمع فلل مودرن — بروفايل خارجي عازل" data-loc="الرياض، حي الملقا">
+        <div class="project-media">
+          <img src="assets/images/real/facade-villas-compound.jpg" alt="مجمع فلل مودرن" loading="lazy">
+          <span class="project-category-badge">واجهات وبروفايل</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">مجمع فلل مودرن — بروفايل خارجي عازل</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            الرياض، حي الملقا
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 6: Paint Outdoor Terrace -->
+      <div class="project-card" data-cat="paint" data-img="assets/images/real/paint-outdoor-terrace.jpg" data-title="تراس وجلسة خارجية — دهانات مقاومة للشمس" data-loc="الرياض، حي النخيل">
+        <div class="project-media">
+          <img src="assets/images/real/paint-outdoor-terrace.jpg" alt="تراس وجلسة خارجية" loading="lazy">
+          <span class="project-category-badge">دهانات خارجية</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">تراس وجلسة خارجية — دهانات مقاومة للشمس</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            الرياض، حي النخيل
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 7: Epoxy Parking Basement -->
+      <div class="project-card" data-cat="epoxy" data-img="assets/images/real/epoxy-parking-basement.jpg" data-title="مواقف سيارات سفلية — إيبوكسي رمادي وترصيف" data-loc="الرياض، طريق الملك فهد">
+        <div class="project-media">
+          <img src="assets/images/real/epoxy-parking-basement.jpg" alt="مواقف سيارات سفلية" loading="lazy">
+          <span class="project-category-badge">أرضيات إيبوكسي</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">مواقف سيارات سفلية — إيبوكسي رمادي وترصيف</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            الرياض، طريق الملك فهد
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 8: Facade Commercial Building -->
+      <div class="project-card" data-cat="facade" data-img="assets/images/real/facade-commercial-building.jpg" data-title="مشروع عمارة «سكينة 9» — بروفايل واجهات معمارية" data-loc="الرياض">
+        <div class="project-media">
+          <img src="assets/images/real/facade-commercial-building.jpg" alt="مشروع سكينة 9" loading="lazy">
+          <span class="project-category-badge">واجهات وبروفايل</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">مشروع عمارة «سكينة 9» — بروفايل واجهات معمارية</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            الرياض
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 9: Paint Master Bedroom -->
+      <div class="project-card" data-cat="paint" data-img="assets/images/real/paint-master-bedroom.jpg" data-title="جناح نوم رئيسي — دهانات ديكورية ناعمة" data-loc="الرياض، حي الياسمين">
+        <div class="project-media">
+          <img src="assets/images/real/paint-master-bedroom.jpg" alt="جناح نوم رئيسي" loading="lazy">
+          <span class="project-category-badge">دهانات داخلية</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">جناح نوم رئيسي — دهانات ديكورية ناعمة</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            الرياض، حي الياسمين
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 10: Epoxy Commercial Showroom -->
+      <div class="project-card" data-cat="epoxy" data-img="assets/images/real/epoxy-commercial-showroom.jpg" data-title="صالة عرض تجارية كبرى — إيبوكسي فائق اللمعان" data-loc="جدة، طريق المدينة">
+        <div class="project-media">
+          <img src="assets/images/real/epoxy-commercial-showroom.jpg" alt="صالة عرض تجارية" loading="lazy">
+          <span class="project-category-badge">أرضيات إيبوكسي</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">صالة عرض تجارية كبرى — إيبوكسي فائق اللمعان</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            جدة، طريق المدينة
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 11: Facade Classic Villa -->
+      <div class="project-card" data-cat="facade" data-img="assets/images/real/facade-classic-villa.jpg" data-title="فيلا نيوكلاسيك — أقواس وكرانيش بروفايل زخرفية" data-loc="الرياض، حي الصحافة">
+        <div class="project-media">
+          <img src="assets/images/real/facade-classic-villa.jpg" alt="فيلا نيوكلاسيك" loading="lazy">
+          <span class="project-category-badge">واجهات وبروفايل</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">فيلا نيوكلاسيك — أقواس وكرانيش بروفايل زخرفية</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            الرياض، حي الصحافة
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 12: Facade Residential Complex -->
+      <div class="project-card" data-cat="facade" data-img="assets/images/real/facade-residential-complex.jpg" data-title="عمارة سكنية راقية — بروفايل ومشربيات مودرن" data-loc="الرياض، حي النرجس">
+        <div class="project-media">
+          <img src="assets/images/real/facade-residential-complex.jpg" alt="عمارة سكنية راقية" loading="lazy">
+          <span class="project-category-badge">واجهات وبروفايل</span>
+          <span class="project-verified-badge">✓ تنفيذ أساسكو ماكس</span>
+        </div>
+        <div class="project-info">
+          <h4 class="project-name">عمارة سكنية راقية — بروفايل ومشربيات مودرن</h4>
+          <span class="project-loc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            الرياض، حي النرجس
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WORK PROCESS SECTION ===================== -->
+<section class="process-section" id="process">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">— منهجية العمل —</span>
+      <h2 class="section-title">خمس خطوات واضحة نحو تشطيب مثالي</h2>
+      <p class="section-subtitle">نعمل وفق خطوات مدروسة وموثقة تضمن راحة العميل، والتنفيذ الخالي من الأخطاء في كل مشروع.</p>
+    </div>
+
+    <div class="process-timeline">
+      
+      <div class="process-step">
+        <div class="step-circle">01</div>
+        <h4 class="step-title">المعاينة والرفع المساحي</h4>
+        <p class="step-desc">زيارة ميدانية مجانية للموقع، فحص حالة الجدران والأسطح، قياس الرطوبة وتحديد المتطلبات بدقة.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">02</div>
+        <h4 class="step-title">تقديم عرض السعر</h4>
+        <p class="step-desc">إعداد مقايسة تفصيلية شفافة تتضمن أنواع المواد وعدد الطبقات والجدول الزمني المعتمد.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">03</div>
+        <h4 class="step-title">تجهيز وتأسيس الأسطح</h4>
+        <p class="step-desc">معالجة التشققات، معجون التأسيس، الصنفرة الاحترافية، وتطبيق طبقات البرايمر الأولية.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">04</div>
+        <h4 class="step-title">التنفيذ الفني المتخصص</h4>
+        <p class="step-desc">تطبيق الدهانات أو الإيبوكسي أو البروفايل بواسطة فنيين محترفين وأحدث معدات الرش والضغط.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">05</div>
+        <h4 class="step-title">التسليم والضمان الموثق</h4>
+        <p class="step-desc">فحص جودة نهائي مشترك مع العميل، تنظيف الموقع، وتسليم شهادة الضمان الرسمية المعتمدة.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA SECTION ===================== -->
+<section class="final-cta-section" id="final-cta">
+  <div class="container">
+    <div class="cta-box">
+      <span class="section-badge">— احجز معاينتك المجانية الآن —</span>
+      <h2 class="cta-title">جاهز لتحويل مساحتك إلى <span>تحفة معمارية؟</span></h2>
+      <p class="cta-desc">تواصل معنا اليوم للحصول على كشف ميداني مجاني ودراسة فنية وعرض سعر دقيق لمشروعك خلال 24 ساعة فقط.</p>
+      
+      <div class="cta-btns">
+        <a href="https://wa.me/966566025964" class="btn-cta-whatsapp" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          تواصل عبر واتساب
+        </a>
+        <a href="tel:+966566025964" class="btn-hero-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.93 6.93l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          اتصل بنا: 0566025964
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIGHTBOX MODAL ===================== -->
+<div class="lightbox-modal" id="lightbox">
+  <div class="lightbox-container">
+    <button class="lightbox-close" id="lightbox-close" aria-label="إغلاق">&times;</button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="" id="lightbox-img">
+    </div>
+    <div class="lightbox-body">
+      <div>
+        <h3 class="lightbox-title" id="lightbox-title">عنوان المشروع</h3>
+        <p class="lightbox-loc" id="lightbox-loc">الموقع</p>
+      </div>
+      <a href="https://wa.me/966566025964" class="btn-hero-primary" style="padding:10px 24px;font-size:14px;" target="_blank">
+        اطلب عمل مماثل لمشروعك
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      
+      <div>
+        <div class="footer-brand">
+          <img src="assets/images/logo-horizontal-trimmed.png" alt="أساسكو ماكس">
+        </div>
+        <p class="footer-desc">
+          شركة أساسكو ماكس — رواد تنفيذ وتشطيب الدهانات الداخلية والخارجية، أرضيات الإيبوكسي التجارية والصناعية، وتشطيبات الواجهات والبروفايل بأعلى معايير الدقة والضمان.
+        </p>
+        <div class="footer-socials">
+          <a href="https://wa.me/966566025964" class="social-btn" aria-label="واتساب" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="تويتر إكس">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="إنستغرام">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="#">الرئيسية</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#projects">مشاريعنا المنفذة</a></li>
+          <li><a href="#why-us">لماذا تختارنا</a></li>
+          <li><a href="#process">خطوات العمل</a></li>
+          <li><a href="#final-cta">اطلب عرض سعر</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">خدمات التشطيب</h4>
+        <ul class="footer-links">
+          <li><a href="#services">دهانات داخلية ديكورية</a></li>
+          <li><a href="#services">دهانات خارجية مقاومة</a></li>
+          <li><a href="#services">أرضيات إيبوكسي للمستودعات</a></li>
+          <li><a href="#services">إيبوكسي ميتاليك للصالات</a></li>
+          <li><a href="#services">تشطيبات بروفايل الواجهات</a></li>
+          <li><a href="#services">عزل الأسطح والحمامات</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">تواصل مباشر</h4>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.93 6.93l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+966566025964" style="color:inherit;text-decoration:none;font-weight:700;">0566025964</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>info@asaskomax.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>الرياض، المملكة العربية السعودية</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 شركة أساسكو ماكس للتشطيبات. جميع الحقوق محفوظة.</p>
+      <p>تنفيذ وتشطيب بأعلى المعايير الهندسية في المملكة العربية السعودية.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== INTERACTIVE SCRIPTS ===================== -->
+<script>
+// Navbar background change on scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}, { passive: true });
+
+// Mobile Drawer toggle
+const hamburger = document.getElementById('hamburger');
+const mobileDrawer = document.getElementById('mobile-drawer');
+hamburger.addEventListener('click', () => {
+  mobileDrawer.classList.toggle('active');
+});
+mobileDrawer.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileDrawer.classList.remove('active');
+  });
+});
+
+// Category Filter for Projects
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+
+    projectCards.forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      if (filter === 'all' || cat === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+// Lightbox Modal
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxTitle = document.getElementById('lightbox-title');
+const lightboxLoc = document.getElementById('lightbox-loc');
+const lightboxClose = document.getElementById('lightbox-close');
+
+projectCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const img = card.getAttribute('data-img');
+    const title = card.getAttribute('data-title');
+    const loc = card.getAttribute('data-loc');
+    lightboxImg.src = img;
+    lightboxImg.alt = title;
+    lightboxTitle.textContent = title;
+    lightboxLoc.textContent = loc;
+    lightbox.classList.add('active');
+  });
+});
+
+lightboxClose.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active');
+  }
+});
+
+// Counter animation
+function animateValue(el, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    el.innerText = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.count').forEach(counter => {
+        const target = parseInt(counter.innerText, 10);
+        animateValue(counter, 0, target, 1600);
+      });
+      countObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const statsContainer = document.querySelector('.stats-row');
+if (statsContainer) {
+  countObserver.observe(statsContainer);
+}
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/966566025964" class="floating-whatsapp" target="_blank" aria-label="تواصل معنا عبر واتساب">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>تواصل واتساب</span>
+</a>
+
+</body>
+</html>
