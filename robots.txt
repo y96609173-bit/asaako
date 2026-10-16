@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://asaako.vercel.app/sitemap.xml
+Sitemap: https://asaskomax.online/sitemap.xml
